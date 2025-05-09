@@ -16,10 +16,10 @@ func main() {
 		"Jack Loner, “Graph Isomorphisms”",
 	}
 
-	backtrack(books[0:10])
+	div_imp(books[0:10])
 }
 
-func backtrack(v []string) {
+func div_imp(v []string) {
 	length := len(v)
 	middle := length / 2
 
@@ -27,8 +27,8 @@ func backtrack(v []string) {
 		left := v[0:middle]
 		right := v[middle:length]
 
-		backtrack(left)
-		backtrack(right)
+		div_imp(left)
+		div_imp(right)
 	} else {
 		fmt.Println(v)
 	}
