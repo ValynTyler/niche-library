@@ -16,20 +16,37 @@ func main() {
 		"Jack Loner, “Graph Isomorphisms”",
 	}
 
-	div_imp(books[0:10])
+	solution := [10]int{}
+
+	count := backtrack(books[:], solution[:], 0)
+	fmt.Println(count)
 }
 
-func div_imp(v []string) {
-	length := len(v)
-	middle := length / 2
-
-	if length > 1 {
-		left := v[0:middle]
-		right := v[middle:length]
-
-		div_imp(left)
-		div_imp(right)
-	} else {
-		fmt.Println(v)
+func backtrack(v []string, x []int, k int) int {
+	count := 0
+	for i := range v {
+		x[k] = i
+		if check(v, x, k) {
+			if solves(v, k) {
+				fmt.Println(x)
+				count += 1
+			} else {
+				count += backtrack(v, x, k+1)
+			}
+		}
 	}
+	return count
+}
+
+func check(v []string, x []int, k int) bool {
+	for i := range v[:k] {
+		if x[k] == x[i] {
+			return false
+		}
+	}
+	return true
+}
+
+func solves(v []string, k int) bool {
+	return k == len(v)-1
 }
