@@ -16,6 +16,13 @@ func main() {
 		/* 9 */ "Jack Loner, “Graph Isomorphisms”",
 	}
 
+	/*
+	Rules:
+	- 0 is left of 1
+	- 4 is left of 8
+	- 4 is immediately followed by 5
+	*/
+
 	solution := [10]int{}
 
 	count := backtrack(books[:], solution[:], 0)
