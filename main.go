@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func main() {
 	books := [10]string{
@@ -20,7 +23,7 @@ func main() {
 		Rules:
 		- [ ] 0 is left of 1
 		- [ ] 4 is left of 8
-		- [x] 4 is immediately followed by 5
+		- [ ] 4 is immediately followed by 5
 	*/
 
 	solution := [10]int{}
@@ -33,7 +36,7 @@ func backtrack(v []string, x []int, k int) int {
 	count := 0
 	for i := range v {
 		x[k] = i
-		if check(v, x, k) {
+		if check(x, k) {
 			if solves(v, k) {
 				fmt.Println(x)
 				count += 1
@@ -45,17 +48,11 @@ func backtrack(v []string, x []int, k int) int {
 	return count
 }
 
-func check(v []string, x []int, k int) bool {
-	for i := range v[:k] {
-		// distinct elements
-		if x[k] == x[i] {
-			return false
-		}
-		// rule III
-		if x[i] == 5 && i != 0 && x[i-1] != 4 {
-			return false
-		}
+func check(x []int, k int) bool {
+	if slices.Contains(x[:k], x[k]) {
+		return false
 	}
+
 	return true
 }
 
