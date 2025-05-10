@@ -17,10 +17,10 @@ func main() {
 	}
 
 	/*
-	Rules:
-	- 0 is left of 1
-	- 4 is left of 8
-	- 4 is immediately followed by 5
+		Rules:
+		- 0 is left of 1
+		- 4 is left of 8
+		- 4 is immediately followed by 5
 	*/
 
 	solution := [10]int{}
@@ -47,7 +47,12 @@ func backtrack(v []string, x []int, k int) int {
 
 func check(v []string, x []int, k int) bool {
 	for i := range v[:k] {
+		// distinct elements
 		if x[k] == x[i] {
+			return false
+		}
+		// rule III
+		if x[i] == 5 && i != 0 && x[i-1] != 4 {
 			return false
 		}
 	}
