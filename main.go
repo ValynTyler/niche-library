@@ -21,7 +21,7 @@ func main() {
 
 	/*
 		Rules:
-		- [ ] 0 is left of 1
+		- [x] 0 is left of 1
 		- [ ] 4 is left of 8
 		- [ ] 4 is immediately followed by 5
 	*/
@@ -49,7 +49,12 @@ func backtrack(v []string, x []int, k int) int {
 }
 
 func check(x []int, k int) bool {
+	// distinct elements
 	if slices.Contains(x[:k], x[k]) {
+		return false
+	}
+	// rule I
+	if x[k] == 1 && !slices.Contains(x[:k], 0) {
 		return false
 	}
 
