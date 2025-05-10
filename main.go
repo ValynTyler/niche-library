@@ -18,9 +18,9 @@ func main() {
 
 	/*
 		Rules:
-		- 0 is left of 1
-		- 4 is left of 8
-		- 4 is immediately followed by 5
+		- [ ] 0 is left of 1
+		- [ ] 4 is left of 8
+		- [x] 4 is immediately followed by 5
 	*/
 
 	solution := [10]int{}
