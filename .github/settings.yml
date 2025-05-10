@@ -1,0 +1,4 @@
+repository:
+  name: niche-library
+  description: Bookshelf permutations generator for only the dorkiest of Technical Computer Science students.
+  topics: go, permutations, backtracking
