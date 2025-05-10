@@ -23,7 +23,7 @@ func main() {
 		Rules:
 		- [x] 0 is left of 1
 		- [x] 4 is left of 8
-		- [ ] 4 is immediately followed by 5
+		- [x] 4 is immediately followed by 5
 	*/
 
 	solution := [10]int{}
@@ -59,6 +59,10 @@ func check(x []int, k int) bool {
 	}
 	// rule II
 	if x[k] == 8 && !slices.Contains(x[:k], 4) {
+		return false
+	}
+	// rule III
+	if (x[k] == 5 && k == 0) || (x[k] == 5 && x[k-1] != 4) {
 		return false
 	}
 
