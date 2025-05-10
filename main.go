@@ -4,16 +4,16 @@ import "fmt"
 
 func main() {
 	books := [10]string{
-		"Adam Zaber, “Calculus A”",
-		"Bruce Yonder, “Calculus B”",
-		"Clive Saber, “Linear Algebra”",
-		"David Faber, “Probability Theory”",
-		"Eric Tander, “Discrete Mathematics”",
-		"Fred Pater, “Statistics”",
-		"Greg Norer, “Algorithms and Complexity” ",
-		"Hugh Qatar, “Languages and Machines”",
-		"Ian Mirror, “Algorithmic Discrete Mathematics”",
-		"Jack Loner, “Graph Isomorphisms”",
+		/* 0 */ "Adam Zaber, “Calculus A”",
+		/* 1 */ "Bruce Yonder, “Calculus B”",
+		/* 2 */ "Clive Saber, “Linear Algebra”",
+		/* 3 */ "David Faber, “Probability Theory”",
+		/* 4 */ "Eric Tander, “Discrete Mathematics”",
+		/* 5 */ "Fred Pater, “Statistics”",
+		/* 6 */ "Greg Norer, “Algorithms and Complexity” ",
+		/* 7 */ "Hugh Qatar, “Languages and Machines”",
+		/* 8 */ "Ian Mirror, “Algorithmic Discrete Mathematics”",
+		/* 9 */ "Jack Loner, “Graph Isomorphisms”",
 	}
 
 	solution := [10]int{}
