@@ -17,6 +17,11 @@
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [go];
         };
+        packages.default = pkgs.buildGoModule {
+          name = "niche-library";
+          src = ./.;
+          vendorHash = null;
+        };
       }
     );
 }
